@@ -1,5 +1,4 @@
 # MongoDB MCP Server
-[![smithery badge](https://smithery.ai/badge/@mongodb/mcp-mongodb)](https://smithery.ai/server/@mongodb/mcp-mongodb)
 
 <a href="https://glama.ai/mcp/servers/@mongodb/mcp-mongodb">
   <img width="380" height="200" src="https://glama.ai/mcp/servers/@mongodb/mcp-mongodb/badge" alt="MongoDB Server MCP server" />
