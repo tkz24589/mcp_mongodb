@@ -1,0 +1,19 @@
+services:
+  mcp-mongodb:
+    build: .
+    container_name: mcp-mongodb
+    working_dir: /app
+    # 如果需要暴露端口，取消下面的注释
+    ports:
+      - "8002:8000"
+    # 如果需要挂载本地代码用于开发，取消下面的注释
+    # volumes:
+    #   - .:/app
+    # 如果需要设置环境变量，取消下面的注释
+    environment:
+      - MCP_TRANSPORT=sse
+      - MCP_HOST=192.168.0.12
+      - MONGO_HOST=192.168.0.12
+      - MONGO_DB=contract
+    # 如果需要重启策略
+    restart: unless-stopped

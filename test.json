@@ -1,0 +1,1 @@
+{"mongodb": {"url": "http://192.168.0.12:8002/sse",  "headers": {}, "timeout": 60,  "sse_read_timeout": 300 },"price_check": {"url": "http://192.168.0.12/e/vyjavcgm7bhh6l1p/sse",  "headers": {}, "timeout": 600,  "sse_read_timeout": 3000 }}

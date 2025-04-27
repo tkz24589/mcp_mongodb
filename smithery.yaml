@@ -1,0 +1,79 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required: []
+    properties:
+      mongodbHost:
+        type: string
+        default: "127.0.0.1"
+        description: MongoDB IP or hostname
+      mongodbPort:
+        type: number
+        default: 27017
+        description: MongoDB port
+      mongodbUsername:
+        type: string
+        default: ""
+        description: MongoDB username
+      mongodbPassword:
+        type: string
+        default: ""
+        description: MongoDB password
+      mongodbAuthSource:
+        type: string
+        default: "admin"
+        description: MongoDB authentication database
+      mongodbAuthMechanism:
+        type: string
+        default: "SCRAM-SHA-256"
+        description: MongoDB authentication mechanism
+      mongodbTLS:
+        type: boolean
+        default: false
+        description: Enable TLS for MongoDB connection
+      mongodbTLSCAFile:
+        type: string
+        default: ""
+        description: CA certificate file for verifying server
+      mongodbTLSCertificateKeyFile:
+        type: string
+        default: ""
+        description: Client certificate/key file for authentication
+      mongodbTLSAllowInvalidCertificates:
+        type: boolean
+        default: false
+        description: Allow invalid certificates
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'python',
+      args: ['src/main.py'],
+      env: {
+        MONGODB_HOST: config.mongodbHost,
+        MONGODB_PORT: String(config.mongodbPort),
+        MONGODB_USERNAME: config.mongodbUsername,
+        MONGODB_PASSWORD: config.mongodbPassword,
+        MONGODB_AUTH_SOURCE: config.mongodbAuthSource,
+        MONGODB_AUTH_MECHANISM: config.mongodbAuthMechanism,
+        MONGODB_TLS: String(config.mongodbTLS),
+        MONGODB_TLS_CA_FILE: config.mongodbTLSCAFile,
+        MONGODB_TLS_CERTIFICATE_KEY_FILE: config.mongodbTLSCertificateKeyFile,
+        MONGODB_TLS_ALLOW_INVALID_CERTIFICATES: String(config.mongodbTLSAllowInvalidCertificates)
+      }
+    })
+  exampleConfig:
+    mongodbHost: "127.0.0.1"
+    mongodbPort: 27017
+    mongodbUsername: ""
+    mongodbPassword: ""
+    mongodbAuthSource: null
+    mongodbAuthMechanism: ""
+    mongodbTLS: false
+    mongodbTLSCAFile: ""
+    mongodbTLSCertificateKeyFile: ""
+    mongodbTLSAllowInvalidCertificates: false
