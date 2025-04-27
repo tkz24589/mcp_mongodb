@@ -1,9 +1,5 @@
 # MongoDB MCP Server
 
-<a href="https://glama.ai/mcp/servers/@mongodb/mcp-mongodb">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/@mongodb/mcp-mongodb/badge" alt="MongoDB Server MCP server" />
-</a>
-
 ## Overview
 The MongoDB MCP Server is a **natural language interface** designed for agentic applications to efficiently manage and search data in MongoDB. It integrates seamlessly with **MCP (Model Content Protocol) clients**, enabling AI-driven workflows to interact with structured and unstructured data in MongoDB. Using this MCP Server, you can ask questions like:
 
