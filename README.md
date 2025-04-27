@@ -38,7 +38,7 @@ npx -y @smithery/cli install @mongodb/mcp-mongodb --client claude
 ### Manual Installation
 ```sh
 # Clone the repository
-git clone https://github.com/mongodb/mcp-mongodb.git
+git clone [https://github.com/mongodb/mcp-mongodb.git](https://github.com/tkz24589/mcp_mongodb.git)
 cd mcp-mongodb
 
 # Install dependencies using uv
