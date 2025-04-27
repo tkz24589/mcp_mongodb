@@ -27,14 +27,6 @@ This MCP Server provides tools to manage the data stored in MongoDB.
 
 ## Installation
 
-### Installing via Smithery
-
-To install MongoDB MCP Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@mongodb/mcp-mongodb):
-
-```bash
-npx -y @smithery/cli install @mongodb/mcp-mongodb --client claude
-```
-
 ### Manual Installation
 ```sh
 # Clone the repository
@@ -60,30 +52,6 @@ To configure this MongoDB MCP Server, consider the following environment variabl
 | `MONGODB_AUTH_SOURCE`   | Authentication database                                   | `"admin"`     |
 | `MONGODB_SSL`           | Enables or disables SSL/TLS                               | `False`       |
 | `MONGODB_CA_PATH`       | CA certificate for verifying server                       | None          |
-
-## Integration with OpenAI Agents SDK
-
-Integrate this MCP Server with the OpenAI Agents SDK. Read the [documents](https://openai.github.io/openai-agents-python/mcp/) to learn more about the integration of the SDK with MCP.
-
-Install the Python SDK.
-
-```commandline
-pip install openai-agents
-```
-
-Configure the OpenAI token:
-
-```commandline
-export OPENAI_API_KEY="<openai_token>"
-```
-
-And run the [application](./examples/mongodb_assistant.py).
-
-```commandline
-python3.13 mongodb_assistant.py 
-```
-
-You can troubleshoot your agent workflows using the [OpenAI dashboard](https://platform.openai.com/traces/).
 
 ## Integration with Claude Desktop
 You can configure Claude Desktop to use this MCP Server.
@@ -123,13 +91,9 @@ You can troubleshoot problems by tailing the log file.
 ```commandline
 tail -f ~/Library/Logs/Claude/mcp-server-mongodb.log
 ```
-
-## Testing
-
-You can use the [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) for visual debugging of this MCP Server.
-
+## Docker 
 ```sh
-npx @modelcontextprotocol/inspector uv run src/main.py
+docker compose up -d
 ```
 
 ## Example Use Cases
@@ -148,4 +112,4 @@ npx @modelcontextprotocol/inspector uv run src/main.py
 This project is licensed under the **MIT License**.
 
 ## Contact
-For questions or support, reach out via [GitHub Issues](https://github.com/mongodb/mcp-mongodb/issues).
+For questions or support, reach out via [GitHub Issues](https://github.com/tkz24589/mcp_mongodb/issues).
